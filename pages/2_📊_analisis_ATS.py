@@ -6,6 +6,7 @@ from modules.procesador import DocumentProcessor
 from modules.analizador import CVAnalyzer
 from modules.puntuador import ATSScorer
 from modules.mejorador_cv import CVImprovementAnalyzer
+from components.navbar_superior import navbar
 
 
 def safe_get(dictionary, key, default=0):
@@ -29,6 +30,8 @@ def main():
         layout="wide",
         initial_sidebar_state="expanded"
     )
+
+    navbar("analisis")
     
     # CSS personalizado
     st.markdown("""

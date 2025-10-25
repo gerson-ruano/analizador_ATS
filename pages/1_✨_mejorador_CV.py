@@ -4,6 +4,7 @@ import plotly.express as px
 import pandas as pd
 from modules.procesador import DocumentProcessor
 from modules.mejorador_cv import CVImprovementAnalyzer
+from components.navbar_superior import navbar
 
 def main():
     st.set_page_config(
@@ -12,6 +13,8 @@ def main():
         layout="wide",
         initial_sidebar_state="expanded"
     )
+
+    navbar("mejorador")
     
     # CSS personalizado para el mejorador
     st.markdown("""
