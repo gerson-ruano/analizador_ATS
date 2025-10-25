@@ -1,0 +1,9 @@
+venv/
+__pycache__/
+*.pyc 
+otros/
+*__pycache__/
+*.temp_file
+
+
+
