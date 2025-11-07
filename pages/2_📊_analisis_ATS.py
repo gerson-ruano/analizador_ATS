@@ -54,22 +54,11 @@ def main():
         padding: 1rem;
         margin: 0.5rem 0;
     }
-    [data-testid="stFileUploader"] {
-    border: 1px solid rgb(209, 213, 219) !important;
-    background: white !important;
-    border-radius: 0.5rem !important;
-    padding: 1.5rem !important;
-    cursor: pointer !important;
-    text-align: center !important;
-    transition: all 0.2s ease !important;
-    font-family: inherit !important;
-    }
-
     /* 🔵 ESTILO IDÉNTICO A INPUT FOCUS DE STREAMLIT */
     [data-testid="stFileUploader"]:has([data-testid*="FileName"]) {
-        border: 2px solid #b4291f !important;
+        border: 2px solid #1f77b4 !important;
         background: white !important;
-        box-shadow: 0 0 0 1px #b4291f !important;
+        box-shadow: 0 0 0 1px #1f77b4 !important;
         outline: none !important;
     }
 
@@ -111,10 +100,10 @@ def main():
     
     # Sidebar
     with st.sidebar:
-        st.header("⚙️ Configuración")
+        st.header("📤 Sube el CV")
         
         uploaded_file = st.file_uploader(
-            "**Sube tu CV**",
+            "**Agrega el CV a analizar**",
             type=['pdf', 'docx', 'txt'],
             help="Formatos soportados: PDF, Word (DOCX), Texto (TXT)"
         )
