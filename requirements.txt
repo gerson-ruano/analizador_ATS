@@ -10,3 +10,4 @@ pytesseract==0.3.10
 pillow==10.2.0
 spacy==3.7.2
 plotly==5.17.0
+python-dotenv==1.0.0

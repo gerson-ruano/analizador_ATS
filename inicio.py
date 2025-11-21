@@ -1,5 +1,8 @@
 # pages/0_🏠_Inicio.py - Versión mejorada
 import streamlit as st
+from controllers.auth import require_auth, get_current_user
+require_auth()  
+user_info = get_current_user()
 from style import aplicar_estilo_principal, crear_header, crear_tarjeta
 from components.navbar_superior import navbar
 
