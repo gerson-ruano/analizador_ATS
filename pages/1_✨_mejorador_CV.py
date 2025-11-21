@@ -1,4 +1,7 @@
 import streamlit as st
+from controllers.auth import require_page_auth, get_current_user, logout, require_auth
+require_page_auth() 
+user_info = get_current_user()
 import plotly.graph_objects as go
 import plotly.express as px
 import pandas as pd
