@@ -153,7 +153,7 @@ def show_login_screen():
     """Muestra la pantalla de login (tu código existente)"""
     st.set_page_config(
         page_title="Login",
-        page_icon="📊", 
+        page_icon="✨", 
         layout="centered"
     )
     
@@ -204,12 +204,9 @@ ul[data-testid="stSidebarNavItems"] {
 # Header
     st.markdown("""
     <div class="login-header">
-        <h1 style='color: #005bea; margin-bottom: 10px;'>📊</h1>
-        <h2 style='color: #005bea; margin: 0;'>Sistema de Reportes RAP</h2>
-        <h5 style='color: #005bea; margin: 0;'>usuario:</h5>
-        <h5 style='color: #054bya; margin: 0;'>prueba</h5>
-        <h5 style='color: #005bea; margin: 0;'>password:</h5>
-        <h5 style='color: #054bya; margin: 0;'>123</h5>
+        <h1 style='color: #005bea; margin-bottom: 10px;'>✨</h1>
+        <h2 style='color: #005bea; margin: 0;'>Mejorador de CVS</h2>
+
     </div>
     """, unsafe_allow_html=True)
 
@@ -232,6 +229,14 @@ ul[data-testid="stSidebarNavItems"] {
             type="primary",
             
         )
+        st.markdown("""
+    <div class="login-header">
+        <h5 style='color: #005bea; margin: 0;'>usuario:</h5>
+        <h5 style='color: #054bya; margin: 0;'>prueba</h5>
+        <h5 style='color: #005bea; margin: 0;'>password:</h5>
+        <h5 style='color: #054bya; margin: 0;'>123</h5>
+    </div>
+    """, unsafe_allow_html=True)
         
         if login_button:
             if username and password:
