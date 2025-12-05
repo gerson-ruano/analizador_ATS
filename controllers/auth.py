@@ -154,7 +154,8 @@ def show_login_screen():
     st.set_page_config(
         page_title="Login",
         page_icon="✨", 
-        layout="centered"
+        layout="centered",
+        initial_sidebar_state="collapsed"
     )
     
     # Tu CSS existente...

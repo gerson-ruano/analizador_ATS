@@ -14,7 +14,7 @@ def main():
         page_title="Mejorador de CV - Análisis Profesional", 
         page_icon="✨", 
         layout="wide",
-        initial_sidebar_state="expanded"
+        initial_sidebar_state="collapsed"
     )
 
     navbar("mejorador")
@@ -110,18 +110,17 @@ def main():
 
     st.markdown('<h1 class="main-header">✨ Mejorador Profesional de CV</h1>', unsafe_allow_html=True)
     st.markdown('<p class="sub-header">Analiza y mejora la forma, estructura y presentación de tu Curriculum Vitae</p>', unsafe_allow_html=True)
+
+    st.header("📤 Sube tu CV")
+        
+    uploaded_file = st.file_uploader(
+        "**Selecciona tu archivo**",
+        type=['pdf', 'docx', 'txt'],
+        help="Formatos soportados: PDF, Word (DOCX), Texto (TXT)"
+    )
     
     # Sidebar específico para mejora de CV
     with st.sidebar:
-        st.header("📤 Sube tu CV")
-        
-        uploaded_file = st.file_uploader(
-            "**Selecciona tu archivo**",
-            type=['pdf', 'docx', 'txt'],
-            help="Formatos soportados: PDF, Word (DOCX), Texto (TXT)"
-        )
-        
-        st.markdown("---")
         st.header("🎯 ¿Qué analizamos?")
         st.markdown("""
         - **🏗️ Estructura**: Organización y secciones

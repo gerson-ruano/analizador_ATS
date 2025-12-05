@@ -31,7 +31,7 @@ def main():
         page_title="Analizador de CVs ATS", 
         page_icon="📄", 
         layout="wide",
-        initial_sidebar_state="expanded"
+        initial_sidebar_state="collapsed"
     )
 
     navbar("analisis")
@@ -101,35 +101,33 @@ def main():
     st.markdown('<h1 class="main-header">📄 Analizador de CVs - ATS</h1>', unsafe_allow_html=True)
     st.markdown('<p class="sub-header">Esta herramienta te ayuda a optimizar calificaciones utilizando el sistemas ATS (Applicant Tracking System) para filtrar candidatos.</p>', unsafe_allow_html=True)
     
+    st.header("📤 Sube el CV")
+        
+    uploaded_file = st.file_uploader(
+        "**Agrega el CV a analizar**",
+        type=['pdf', 'docx', 'txt'],
+        help="Formatos soportados: PDF, Word (DOCX), Texto (TXT)"
+    )
+    job_description = st.text_area(
+        "**Descripción del puesto**",
+        height=200,
+        placeholder="Pega aquí la descripción del puesto para un análisis más preciso...",
+        help="Cuanto más detallada sea la descripción, más preciso será el análisis"
+    )
+    # Ejemplo de descripción de puesto
+    with st.expander("📝 Ver ejemplo de descripción de puesto"):
+        st.code("""
+        Estamos buscando un Desarrollador Python con:
+        - 3+ años de experiencia en Python y Django
+        - Conocimientos en bases de datos SQL y MongoDB
+        - Experiencia con React o Vue.js
+        - Conocimientos en Docker y AWS
+        - Habilidades de trabajo en equipo y comunicación
+        - Inglés intermedio-avanzado
+        """, language="text")
+    
     # Sidebar
     with st.sidebar:
-        st.header("📤 Sube el CV")
-        
-        uploaded_file = st.file_uploader(
-            "**Agrega el CV a analizar**",
-            type=['pdf', 'docx', 'txt'],
-            help="Formatos soportados: PDF, Word (DOCX), Texto (TXT)"
-        )
-        
-        job_description = st.text_area(
-            "**Descripción del puesto**",
-            height=200,
-            placeholder="Pega aquí la descripción del puesto para un análisis más preciso...",
-            help="Cuanto más detallada sea la descripción, más preciso será el análisis"
-        )
-
-        # Ejemplo de descripción de puesto
-        with st.expander("📝 Ver ejemplo de descripción de puesto"):
-            st.code("""
-            Estamos buscando un Desarrollador Python con:
-            - 3+ años de experiencia en Python y Django
-            - Conocimientos en bases de datos SQL y MongoDB
-            - Experiencia con React o Vue.js
-            - Conocimientos en Docker y AWS
-            - Habilidades de trabajo en equipo y comunicación
-            - Inglés intermedio-avanzado
-            """, language="text")
-        
         st.markdown("### 📊 ¿Qué se analizará?")
         st.markdown("""
         - ✅ **Coincidencia con el puesto**

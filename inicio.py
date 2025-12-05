@@ -91,20 +91,24 @@ def main():
         </div>
         """, unsafe_allow_html=True)
     
-    # Estadísticas
     st.markdown("---")
     st.subheader("📈 Resultados Comprobados")
-    
-    col1, col2, col3 = st.columns(3)
-    
-    with col1:
-        st.metric("🚀 Eficiencia", "+40%", "más entrevistas")
-    
-    with col2:
-        st.metric("🎯 Precisión", "85%", "de efectividad")
-    
-    with col3:
-        st.metric("💼 Respuestas", "3.2x", "más respuestas")
+
+    # columnas: vacío - contenido - vacío
+    left, center, right = st.columns([1, 2, 1])
+
+    with center:
+        c1, c2, c3 = st.columns(3)
+        
+        with c1:
+            st.metric("🚀 Eficiencia", "+40%", "más entrevistas")
+        
+        with c2:
+            st.metric("🎯 Precisión", "85%", "de efectividad")
+        
+        with c3:
+            st.metric("💼 Respuestas", "3.2x", "más respuestas")
+
 
 if __name__ == "__main__":
     main()
