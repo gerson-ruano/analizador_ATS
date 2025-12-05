@@ -171,24 +171,31 @@ def show_login_screen():
     border: 1px solid #e6f0ff;
 }
 .login-header {
-    text-align: center;
-    margin-bottom: 1rem;
+    display: flex;
+    gap: 10px;            
+    align-items: center;
+    justify-content: center; 
 }
 
-/* TARGET MUY ESPECÍFICO PARA EL BOTÓN DEL LOGIN */
-div[data-testid="stForm"] button[data-testid="baseButton-primary"],
-div[data-testid="stFormSubmitButton"] button,
-form[data-testid="stForm"] button[kind="primary"] {
+/* CONTENEDOR PARA CENTRAR EL BOTÓN */
+div[data-testid="stForm"] div[data-testid="stFormSubmitButton"] {
+    display: flex !important;
+    justify-content: center !important;
+}
+
+/* ESTILO DEL BOTÓN */
+div[data-testid="stFormSubmitButton"] button {
     background: linear-gradient(135deg, #005bea 0%, #0047b7 100%) !important;
-    background-color: #005bea !important;
     border: 2px solid #005bea !important;
     color: white !important;
     font-weight: 600 !important;
     border-radius: 8px !important;
     padding: 12px 24px !important;
     font-size: 16px !important;
-    width: 100% !important;
+    width: auto !important;   
+    min-width: 180px;           
 }
+
 
 /* ANULAR CUALQUIER ESTILO ROJO */
 div[data-testid="stForm"] button[data-testid="baseButton-primary"]:hover {
@@ -230,12 +237,13 @@ ul[data-testid="stSidebarNavItems"] {
             type="primary",
             
         )
+        
         st.markdown("""
     <div class="login-header">
         <h5 style='color: #005bea; margin: 0;'>usuario:</h5>
-        <h5 style='color: #054bya; margin: 0;'>prueba</h5>
+        <h5 style='color: #00000; margin: 0;'>prueba</h5>
         <h5 style='color: #005bea; margin: 0;'>password:</h5>
-        <h5 style='color: #054bya; margin: 0;'>123</h5>
+        <h5 style='color: #00000; margin: 0;'>123</h5>
     </div>
     """, unsafe_allow_html=True)
         
